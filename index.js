@@ -49,7 +49,7 @@ function ordenar(numeros){
 }
 ordenar([4,2]);
 
-/*6. Cree una función que tome una array de números y devuelva los números el
+/*7. Cree una función que tome una array de números y devuelva los números el
 mínimo y el máximo, en ese orden.
 minMax([1, 2, 3, 4, 5]) ➞ [1, 5] */
 function minMax(...arr){
@@ -92,7 +92,7 @@ function formatPhoneNumber(arr) {
 function captura(palabra, letra){
     let indices = [];
     const arr = palabra.split('');
-    let idx = arr.indexOf(element);
+    let idx = arr.indexOf(letra);
     while(idx != -1){
         indices.push(idx);
         idx = arr.indexOf(letra, idx + 1)
@@ -102,3 +102,24 @@ function captura(palabra, letra){
     return [min, max]
 }
 console.log(captura('manzana', 'a'))
+
+/*9. Cree la función que toma una array de objetos y devuelve la suma de los
+presupuestos de las personas.
+getBudgets([
+ { name: "John", age: 21, budget: 23000 },
+ { name: "Steve", age: 32, budget: 40000 },
+ { name: "Martin", age: 16, budget: 2700 }
+]) ➞ 65700
+*/
+const presupuesto = [
+    { name: "John", age: 21, budget: 23000 },
+    { name: "Steve", age: 32, budget: 40000 },
+    { name: "Martin", age: 16, budget: 2700 }
+   ]
+
+function getBudgets(){
+    let suma = presupuesto.reduce((almacenar, captura) => almacenar + captura.budget, 0);
+    console.log(suma)
+}
+
+getBudgets();
